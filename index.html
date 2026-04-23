@@ -10,151 +10,169 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="hero">
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="#accueil">Ulrick M.N.</a>
+      <nav class="menu" aria-label="Navigation principale">
+        <a href="#a-propos">À propos</a>
+        <a href="#competences">Compétences</a>
+        <a href="#experiences">Expériences</a>
+        <a href="#formations">Formations</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <header class="hero" id="accueil">
     <div class="hero__content">
-      <img id="hero-photo" alt="Photo de Ulrick Mbajoun Ngambe" class="hero__photo">
-      <div>
+      <div class="hero__left">
         <p class="hero__tag">Ingénieur Test & Validation</p>
         <h1>Ulrick Mbajoun Ngambe</h1>
         <p class="hero__subtitle">
-          Spécialisé en Réseaux & Télécommunications, Systèmes Embarqués et Génie Logiciel, avec 7 ans d'expérience internationale en Asie.
+          J'accompagne les équipes dans la validation de systèmes réseau et logiciels complexes,
+          avec une approche orientée fiabilité, performance et qualité.
         </p>
         <div class="hero__actions">
-          <a id="cv-link" class="btn btn--primary" target="_blank" rel="noreferrer">Voir mon CV</a>
+          <a id="cv-link" class="btn btn--primary" target="_blank" rel="noreferrer">Télécharger le CV</a>
+          <a class="btn btn--ghost" href="#contact">Me contacter</a>
         </div>
-        <div class="hero__contact">
-          <span>06 62 99 37 31</span>
-          <span>mbajoun@gmail.com</span>
-          <span>France</span>
-          <a href="https://www.linkedin.com/in/ulrick-mbajoun-6a8a4741" target="_blank" rel="noreferrer">LinkedIn</a>
-        </div>
+        <ul class="hero__highlights">
+          <li><strong>7+ ans</strong> d'expérience internationale</li>
+          <li><strong>3 domaines</strong> clés : réseaux, embarqué, logiciel</li>
+          <li><strong>Objectif</strong>: mission Test/Validation en France</li>
+        </ul>
+      </div>
+      <div class="hero__right">
+        <img id="hero-photo" alt="Photo de Ulrick Mbajoun Ngambe" class="hero__photo">
       </div>
     </div>
   </header>
 
   <main>
-    <section>
+    <section id="a-propos" class="panel">
       <h2>À propos</h2>
       <p>
-        Je suis actuellement à la recherche d'une opportunité professionnelle alignée avec mes domaines de compétences.
-        Passionné par l'innovation technologique, j'excelle dans la validation et l'analyse de performances de systèmes complexes.
+        Ingénieur passionné par l'innovation technologique, je suis actuellement en recherche d'une opportunité
+        en Test & Validation. J'interviens sur l'analyse de performances, la résolution d'anomalies et
+        l'amélioration continue de la qualité des systèmes.
       </p>
     </section>
 
-    <section>
-      <h2>Compétences</h2>
+    <section id="competences" class="panel">
+      <h2>Compétences principales</h2>
       <div class="grid">
         <article class="card">
-          <h3>Intelligence Artificielle</h3>
+          <h3>Intelligence artificielle</h3>
           <ul>
             <li>Machine Learning et Deep Learning</li>
-            <li>Traitement de données</li>
             <li>Modèles prédictifs et détection d'anomalies</li>
+            <li>Traitement et valorisation de données</li>
           </ul>
         </article>
         <article class="card">
-          <h3>Réseaux et Télécoms</h3>
+          <h3>Réseaux et télécoms</h3>
           <ul>
             <li>LAN, WAN, Cloud Networking</li>
-            <li>TCP/IP, UDP, sécurité réseau (VPN, Firewall, IDS/IPS)</li>
-            <li>Optimisation et virtualisation des infrastructures</li>
+            <li>TCP/IP, UDP, VPN, Firewall, IDS/IPS</li>
+            <li>Optimisation et virtualisation d'infrastructures</li>
           </ul>
         </article>
         <article class="card">
           <h3>Cybersécurité</h3>
           <ul>
-            <li>Protection des infrastructures et données</li>
-            <li>Gestion des incidents de sécurité</li>
-            <li>Chiffrement et authentification</li>
+            <li>Protection des données et des infrastructures</li>
+            <li>Gestion et qualification des incidents</li>
+            <li>Chiffrement, authentification et contrôle d'accès</li>
           </ul>
         </article>
         <article class="card">
           <h3>Systèmes embarqués</h3>
           <ul>
             <li>Développement sur Raspberry Pi, ARM, FPGA</li>
-            <li>Automatisation et contrôle industriel</li>
-            <li>Protocoles sans fil : Bluetooth, Zigbee, WiFi</li>
+            <li>Automatisation et supervision de capteurs</li>
+            <li>Bluetooth, Zigbee, WiFi</li>
           </ul>
         </article>
       </div>
-      <p class="tech">Langages et outils : Python, C/C++, JavaScript, TensorFlow, Keras, Scikit-learn, Wireshark.</p>
+      <p class="tech">
+        Outils et langages : Python, C/C++, JavaScript, TensorFlow, Keras, Scikit-learn, Wireshark.
+      </p>
     </section>
 
-    <section>
+    <section id="experiences" class="panel">
       <h2>Expériences professionnelles</h2>
       <div class="timeline">
         <article>
+          <span class="timeline__date">2019 - 2020</span>
           <h3>Ingénieur Test et Validation - Setelia France (Stage)</h3>
-          <p>2019 - 2020</p>
           <ul>
-            <li>Tests des applications mobiles et STB (Bouygues Telecom).</li>
-            <li>Validation en environnement Live network.</li>
-            <li>Analyse des flux réseau et résolution d'anomalies (ADB, XCode, Wireshark).</li>
+            <li>Tests d'applications mobiles et STB (Bouygues Telecom)</li>
+            <li>Validation en environnement live network</li>
+            <li>Analyse de flux et résolution d'anomalies (ADB, XCode, Wireshark)</li>
           </ul>
         </article>
         <article>
-          <h3>Ingénierie système de surveillance environnementale (Projet)</h3>
-          <p>2019 - 2020</p>
+          <span class="timeline__date">2019 - 2020</span>
+          <h3>Projet de surveillance environnementale embarquée</h3>
           <ul>
-            <li>Développement d'un système embarqué sur Raspberry Pi.</li>
-            <li>Collecte en temps réel de température, humidité et qualité de l'air.</li>
+            <li>Conception d'un système sur Raspberry Pi</li>
+            <li>Collecte temps réel : température, humidité, qualité de l'air</li>
           </ul>
         </article>
         <article>
-          <h3>Ingénieur système embarqué multi-cœur Big Data (Projet)</h3>
-          <p>2017 - 2018</p>
+          <span class="timeline__date">2017 - 2018</span>
+          <h3>Projet système embarqué multi-cœur Big Data</h3>
           <ul>
-            <li>Optimisation du traitement parallèle sur architecture embarquée.</li>
-            <li>Mise en œuvre sur carte Zedboard.</li>
+            <li>Optimisation du traitement parallèle sur architecture embarquée</li>
+            <li>Mise en œuvre sur carte Zedboard</li>
           </ul>
         </article>
         <article>
-          <h3>Technicien maintenance électronique et câbleur - Inter TV SARL</h3>
-          <p>2007 - 2009</p>
+          <span class="timeline__date">2007 - 2009</span>
+          <h3>Technicien maintenance électronique - Inter TV SARL</h3>
           <ul>
-            <li>Maintenance préventive et corrective d'équipements électroniques.</li>
-            <li>Câblage, soudure, diagnostic de pannes et interventions sur site.</li>
+            <li>Maintenance préventive et corrective d'équipements électroniques</li>
+            <li>Câblage, soudure, diagnostic de pannes et interventions terrain</li>
           </ul>
         </article>
       </div>
     </section>
 
-    <section>
-      <h2>Formations</h2>
-      <ul>
+    <section id="formations" class="panel">
+      <h2>Formations & certifications</h2>
+      <ul class="list-plain">
         <li><strong>Google Cybersecurity Certificate</strong> - 2024/2025</li>
-        <li><strong>Ingénieur IA</strong> - École Supérieure Européenne de Management, France (2023-2024)</li>
-        <li><strong>D.U. Création et Développement de Start-ups Innovantes</strong> - Université Paris-Saclay, France (2020-2022)</li>
-        <li><strong>Master 2 Réseaux et Télécommunications</strong> - Université Paris-Saclay, France (2019-2020)</li>
-        <li><strong>Master 2 Systèmes Embarqués</strong> - Université Paris-Saclay, France (2017-2018)</li>
+        <li><strong>Ingénieur IA</strong> - ESEM, France (2023-2024)</li>
+        <li><strong>D.U. Start-ups Innovantes</strong> - Université Paris-Saclay (2020-2022)</li>
+        <li><strong>Master 2 Réseaux et Télécommunications</strong> - Université Paris-Saclay (2019-2020)</li>
+        <li><strong>Master 2 Systèmes Embarqués</strong> - Université Paris-Saclay (2017-2018)</li>
         <li><strong>Master 2 Logiciels Embarqués</strong> - Université de Zhejiang, Chine (2014-2016)</li>
-        <li><strong>Bachelor Génie Électronique</strong> - Université de Zhejiang, Chine (2011-2014)</li>
       </ul>
     </section>
 
-    <section class="two-columns">
+    <section class="panel two-columns" id="contact">
       <div>
         <h2>Langues</h2>
-        <ul>
-          <li>Français : Langue natale</li>
-          <li>Anglais : Courant</li>
-          <li>Chinois : Courant</li>
+        <ul class="list-plain">
+          <li>Français : langue natale</li>
+          <li>Anglais: courant</li>
+          <li>Chinois: courant</li>
         </ul>
       </div>
       <div>
-        <h2>Centres d'intérêt</h2>
-        <ul>
-          <li>Karate</li>
-          <li>Revues scientifiques</li>
-          <li>ABC électronique</li>
-          <li>Actualités High-tech</li>
+        <h2>Contact</h2>
+        <ul class="list-plain">
+          <li>Téléphone : 06 62 99 37 31</li>
+          <li>Email: mbajoun@gmail.com</li>
+          <li>Pays: France</li>
+          <li><a href="https://www.linkedin.com/in/ulrick-mbajoun-6a8a4741" target="_blank" rel="noreferrer">LinkedIn</a></li>
         </ul>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>© <span id="year"></span> Ulrick Mbajoun Ngambe</p>
+    <p>© <span id="year"></span> Ulrick Mbajoun Ngambe - Portfolio v2</p>
   </footer>
   <script src="script.js"></script>
 </body>
