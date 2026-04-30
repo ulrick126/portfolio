@@ -11,6 +11,8 @@ const heroPhoto = document.getElementById("hero-photo");
 const cvLink = document.getElementById("cv-link");
 const yearEl = document.getElementById("year");
 const langButtons = document.querySelectorAll(".lang-switch__btn");
+const navToggler = document.getElementById("navbar-toggler");
+const topbarActions = document.querySelector(".topbar__actions");
 
 const i18n = {
   fr: {
@@ -25,6 +27,7 @@ const i18n = {
       "Ingénieur Test & Validation, expert en validation réseau, logiciels et systèmes embarqués.",
     jsonLdJobTitle: "Ingénieur Test & Validation",
     langSwitchAriaLabel: "Choix de langue",
+    navToggleLabel: "Ouvrir le menu",
     navLabel: "Navigation principale",
     nav: ["À propos", "Compétences", "Expériences", "Formations", "Contact"],
     heroTag: "Ingénieur Test & Validation",
@@ -143,6 +146,7 @@ const i18n = {
       "Test & Validation engineer with expertise in network, software, and embedded systems validation.",
     jsonLdJobTitle: "Test & Validation Engineer",
     langSwitchAriaLabel: "Language switch",
+    navToggleLabel: "Open navigation menu",
     navLabel: "Main navigation",
     nav: ["About", "Skills", "Experience", "Education", "Contact"],
     heroTag: "Test & Validation Engineer",
@@ -302,6 +306,9 @@ function applyLanguage(lang) {
   if (nav) {
     nav.setAttribute("aria-label", t.navLabel);
   }
+  if (navToggler) {
+    navToggler.setAttribute("aria-label", t.navToggleLabel || "Open navigation menu");
+  }
   if (langSwitch) {
     langSwitch.setAttribute("aria-label", t.langSwitchAriaLabel || "Language switch");
   }
@@ -431,6 +438,12 @@ function applyLanguage(lang) {
   }
 }
 
+function closeMobileMenu() {
+  if (!navToggler || !topbarActions) return;
+  navToggler.setAttribute("aria-expanded", "false");
+  topbarActions.classList.remove("is-open");
+}
+
 if (heroPhoto) {
   heroPhoto.src = photos[currentPhotoIndex];
 }
@@ -454,3 +467,26 @@ langButtons.forEach((button) => {
     }
   });
 });
+
+if (navToggler && topbarActions) {
+  navToggler.addEventListener("click", () => {
+    const isExpanded = navToggler.getAttribute("aria-expanded") === "true";
+    navToggler.setAttribute("aria-expanded", isExpanded ? "false" : "true");
+    topbarActions.classList.toggle("is-open", !isExpanded);
+  });
+
+  const menuLinks = document.querySelectorAll(".menu a");
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 620) {
+        closeMobileMenu();
+      }
+    });
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 620) {
+      closeMobileMenu();
+    }
+  });
+}
